@@ -1,0 +1,96 @@
+2018-11-28 23:03:40,669{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+ {:concurrency 5,
+ :db
+ #object[jepsen.etcdemo$db$reify__378 0x4976085 "jepsen.etcdemo$db$reify__378@4976085"],
+ :name "etcd",
+ :start-time
+ #object[org.joda.time.DateTime 0x6e3eb0cd "2018-11-28T23:03:40.000Z"],
+ :net
+ #object[jepsen.net$reify__4286 0x235d659c "jepsen.net$reify__4286@235d659c"],
+ :client
+ #object[jepsen.client$reify__4142 0x360e9c06 "jepsen.client$reify__4142@360e9c06"],
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier 0x5edacf20 "java.util.concurrent.CyclicBarrier@5edacf20"],
+ :ssh
+ {:username "admin",
+  :password "root",
+  :strict-host-key-checking false,
+  :private-key-path nil},
+ :checker
+ #object[jepsen.checker$unbridled_optimism$reify__3965 0x1a47a1e8 "jepsen.checker$unbridled_optimism$reify__3965@1a47a1e8"],
+ :nemesis
+ #object[jepsen.nemesis$reify__4369 0x25f723b0 "jepsen.nemesis$reify__4369@25f723b0"],
+ :active-histories #<Atom@27be17c8: #{}>,
+ :nodes
+ ["ec2-54-236-10-223.compute-1.amazonaws.com"
+  "ec2-100-24-16-184.compute-1.amazonaws.com"
+  "ec2-54-204-131-219.compute-1.amazonaws.com"
+  "ec2-52-90-218-187.compute-1.amazonaws.com"
+  "ec2-34-229-59-126.compute-1.amazonaws.com"],
+ :test-count 1,
+ :generator (gen/gvoid),
+ :os
+ #object[jepsen.os.debian$reify__362 0x47768e74 "jepsen.os.debian$reify__362@47768e74"],
+ :time-limit 60,
+ :model {}}
+
+2018-11-28 23:03:41,511{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.os.debian: ec2-52-90-218-187.compute-1.amazonaws.com setting up debian
+2018-11-28 23:03:41,511{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.os.debian: ec2-34-229-59-126.compute-1.amazonaws.com setting up debian
+2018-11-28 23:03:41,511{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.os.debian: ec2-100-24-16-184.compute-1.amazonaws.com setting up debian
+2018-11-28 23:03:41,512{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.os.debian: ec2-54-204-131-219.compute-1.amazonaws.com setting up debian
+2018-11-28 23:03:41,514{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.os.debian: ec2-54-236-10-223.compute-1.amazonaws.com setting up debian
+2018-11-28 23:03:42,138{GMT}	WARN	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.control: Encountered error with conn [:control "ec2-52-90-218-187.compute-1.amazonaws.com"]; reopening
+2018-11-28 23:03:43,703{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2018-11-28 23:03:43,704{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-28 23:03:43,704{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-28 23:03:43,704{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-28 23:03:43,705{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-28 23:03:43,705{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-28 23:03:43,707{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2018-11-28 23:03:43,707{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.etcdemo: Setting up etcd v3.1.5
+2018-11-28 23:03:43,707{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.etcdemo: Setting up etcd v3.1.5
+2018-11-28 23:03:43,708{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.etcdemo: Setting up etcd v3.1.5
+2018-11-28 23:03:43,709{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.etcdemo: Setting up etcd v3.1.5
+2018-11-28 23:03:43,710{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.etcdemo: Setting up etcd v3.1.5
+2018-11-28 23:03:45,035{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.control.util: starting etcd
+2018-11-28 23:03:45,036{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.control.util: starting etcd
+2018-11-28 23:03:45,036{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.control.util: starting etcd
+2018-11-28 23:03:45,037{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.control.util: starting etcd
+2018-11-28 23:03:45,038{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.control.util: starting etcd
+2018-11-28 23:03:55,248{GMT}	INFO	[jepsen nemesis] jepsen.core: Starting nemesis
+2018-11-28 23:03:55,248{GMT}	INFO	[jepsen worker 1] jepsen.core: Starting worker 1
+2018-11-28 23:03:55,248{GMT}	INFO	[jepsen worker 0] jepsen.core: Starting worker 0
+2018-11-28 23:03:55,248{GMT}	INFO	[jepsen worker 2] jepsen.core: Starting worker 2
+2018-11-28 23:03:55,249{GMT}	INFO	[jepsen nemesis] jepsen.core: Running nemesis
+2018-11-28 23:03:55,249{GMT}	INFO	[jepsen worker 1] jepsen.core: Running worker 1
+2018-11-28 23:03:55,249{GMT}	INFO	[jepsen worker 0] jepsen.core: Running worker 0
+2018-11-28 23:03:55,250{GMT}	INFO	[jepsen nemesis] jepsen.core: Stopping nemesis
+2018-11-28 23:03:55,249{GMT}	INFO	[jepsen worker 4] jepsen.core: Starting worker 4
+2018-11-28 23:03:55,251{GMT}	INFO	[jepsen worker 1] jepsen.core: Stopping worker 1
+2018-11-28 23:03:55,251{GMT}	INFO	[jepsen worker 0] jepsen.core: Stopping worker 0
+2018-11-28 23:03:55,252{GMT}	INFO	[jepsen worker 2] jepsen.core: Running worker 2
+2018-11-28 23:03:55,250{GMT}	INFO	[jepsen worker 3] jepsen.core: Starting worker 3
+2018-11-28 23:03:55,258{GMT}	INFO	[jepsen worker 2] jepsen.core: Stopping worker 2
+2018-11-28 23:03:55,259{GMT}	INFO	[jepsen worker 3] jepsen.core: Running worker 3
+2018-11-28 23:03:55,259{GMT}	INFO	[jepsen worker 3] jepsen.core: Stopping worker 3
+2018-11-28 23:03:55,252{GMT}	INFO	[jepsen worker 4] jepsen.core: Running worker 4
+2018-11-28 23:03:55,260{GMT}	INFO	[jepsen worker 4] jepsen.core: Stopping worker 4
+2018-11-28 23:03:55,262{GMT}	INFO	[jepsen test runner] jepsen.core: Run complete, writing
+2018-11-28 23:03:55,281{GMT}	INFO	[jepsen test runner] jepsen.core: Analyzing...
+2018-11-28 23:03:55,282{GMT}	INFO	[jepsen test runner] jepsen.core: Analysis complete
+2018-11-28 23:03:55,284{GMT}	INFO	[jepsen results] jepsen.store: Wrote /home/admin/jepsen.etcdemo/store/etcd/20181128T230340.000Z/results.edn
+2018-11-28 23:03:55,285{GMT}	INFO	[jepsen test runner] jepsen.core: Snarfing log files
+2018-11-28 23:03:55,288{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.core: downloading /opt/etcd/etcd.log to etcd.log
+2018-11-28 23:03:55,292{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.core: downloading /opt/etcd/etcd.log to etcd.log
+2018-11-28 23:03:55,293{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.core: downloading /opt/etcd/etcd.log to etcd.log
+2018-11-28 23:03:55,293{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.core: downloading /opt/etcd/etcd.log to etcd.log
+2018-11-28 23:03:55,294{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.core: downloading /opt/etcd/etcd.log to etcd.log
+2018-11-28 23:03:55,313{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-28 23:03:55,314{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-28 23:03:55,314{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-28 23:03:55,314{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-28 23:03:55,314{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-28 23:03:55,323{GMT}	INFO	[jepsen test runner] jepsen.core: {:valid? true}
+
+
+Everything looks good! ヽ(‘ー`)ノ

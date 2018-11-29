@@ -1,0 +1,64 @@
+2018-11-28 21:49:21,141{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+ {:concurrency 5,
+ :db
+ #object[jepsen.db$reify__2207 0x58f437b0 "jepsen.db$reify__2207@58f437b0"],
+ :name "noop",
+ :start-time
+ #object[org.joda.time.DateTime 0x40e32762 "2018-11-28T21:49:21.000Z"],
+ :net
+ #object[jepsen.net$reify__4286 0xa4b5ce3 "jepsen.net$reify__4286@a4b5ce3"],
+ :client
+ #object[jepsen.client$reify__4142 0x48976e6d "jepsen.client$reify__4142@48976e6d"],
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier 0x4c5228e7 "java.util.concurrent.CyclicBarrier@4c5228e7"],
+ :ssh
+ {:username "admin",
+  :password "root",
+  :strict-host-key-checking false,
+  :private-key-path nil},
+ :checker
+ #object[jepsen.checker$unbridled_optimism$reify__3965 0x43a65cd8 "jepsen.checker$unbridled_optimism$reify__3965@43a65cd8"],
+ :nemesis
+ #object[jepsen.nemesis$reify__4369 0x1dbd580 "jepsen.nemesis$reify__4369@1dbd580"],
+ :active-histories #<Atom@6732726: #{}>,
+ :nodes
+ ["ec2-54-236-10-223.compute-1.amazonaws.com"
+  "ec2-100-24-16-184.compute-1.amazonaws.com"
+  "ec2-54-204-131-219.compute-1.amazonaws.com"
+  "ec2-52-90-218-187.compute-1.amazonaws.com"
+  "ec2-34-229-59-126.compute-1.amazonaws.com"],
+ :test-count 1,
+ :generator (gen/gvoid),
+ :os
+ #object[jepsen.os$reify__1430 0x51d719bc "jepsen.os$reify__1430@51d719bc"],
+ :time-limit 60,
+ :model {}}
+
+2018-11-28 21:49:21,982{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2018-11-28 21:49:21,984{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2018-11-28 21:49:21,994{GMT}	INFO	[jepsen nemesis] jepsen.core: Starting nemesis
+2018-11-28 21:49:21,998{GMT}	INFO	[jepsen nemesis] jepsen.core: Running nemesis
+2018-11-28 21:49:21,998{GMT}	INFO	[jepsen worker 0] jepsen.core: Starting worker 0
+2018-11-28 21:49:21,998{GMT}	INFO	[jepsen worker 1] jepsen.core: Starting worker 1
+2018-11-28 21:49:21,998{GMT}	INFO	[jepsen worker 2] jepsen.core: Starting worker 2
+2018-11-28 21:49:21,998{GMT}	INFO	[jepsen worker 3] jepsen.core: Starting worker 3
+2018-11-28 21:49:21,998{GMT}	INFO	[jepsen worker 0] jepsen.core: Running worker 0
+2018-11-28 21:49:21,998{GMT}	INFO	[jepsen nemesis] jepsen.core: Stopping nemesis
+2018-11-28 21:49:21,998{GMT}	INFO	[jepsen worker 1] jepsen.core: Running worker 1
+2018-11-28 21:49:21,998{GMT}	INFO	[jepsen worker 2] jepsen.core: Running worker 2
+2018-11-28 21:49:21,999{GMT}	INFO	[jepsen worker 3] jepsen.core: Running worker 3
+2018-11-28 21:49:21,999{GMT}	INFO	[jepsen worker 0] jepsen.core: Stopping worker 0
+2018-11-28 21:49:21,999{GMT}	INFO	[jepsen worker 1] jepsen.core: Stopping worker 1
+2018-11-28 21:49:21,999{GMT}	INFO	[jepsen worker 2] jepsen.core: Stopping worker 2
+2018-11-28 21:49:22,000{GMT}	INFO	[jepsen worker 3] jepsen.core: Stopping worker 3
+2018-11-28 21:49:22,010{GMT}	INFO	[jepsen worker 4] jepsen.core: Starting worker 4
+2018-11-28 21:49:22,010{GMT}	INFO	[jepsen worker 4] jepsen.core: Running worker 4
+2018-11-28 21:49:22,010{GMT}	INFO	[jepsen worker 4] jepsen.core: Stopping worker 4
+2018-11-28 21:49:22,011{GMT}	INFO	[jepsen test runner] jepsen.core: Run complete, writing
+2018-11-28 21:49:22,031{GMT}	INFO	[jepsen test runner] jepsen.core: Analyzing...
+2018-11-28 21:49:22,031{GMT}	INFO	[jepsen test runner] jepsen.core: Analysis complete
+2018-11-28 21:49:22,035{GMT}	INFO	[jepsen results] jepsen.store: Wrote /home/admin/jepsen.etcdemo/store/noop/20181128T214921.000Z/results.edn
+2018-11-28 21:49:22,051{GMT}	INFO	[jepsen test runner] jepsen.core: {:valid? true}
+
+
+Everything looks good! ヽ(‘ー`)ノ

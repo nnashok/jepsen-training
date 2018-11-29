@@ -1,0 +1,225 @@
+2018-11-29 01:03:22,070{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+ {:concurrency 5,
+ :db
+ #object[jepsen.etcdemo$db$reify__2512 0x3e4afd10 "jepsen.etcdemo$db$reify__2512@3e4afd10"],
+ :name "etcd",
+ :start-time
+ #object[org.joda.time.DateTime 0x6c70b7c3 "2018-11-29T01:03:21.000Z"],
+ :net
+ #object[jepsen.net$reify__4286 0x7e1d8d41 "jepsen.net$reify__4286@7e1d8d41"],
+ :client {:conn nil},
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier 0x252c6cdb "java.util.concurrent.CyclicBarrier@252c6cdb"],
+ :ssh
+ {:username "admin",
+  :password "root",
+  :strict-host-key-checking false,
+  :private-key-path nil},
+ :checker
+ #object[jepsen.checker$unbridled_optimism$reify__3965 0x55d1f065 "jepsen.checker$unbridled_optimism$reify__3965@55d1f065"],
+ :nemesis
+ #object[jepsen.nemesis$reify__4369 0x21f91efa "jepsen.nemesis$reify__4369@21f91efa"],
+ :active-histories #<Atom@70543cae: #{}>,
+ :nodes
+ ["ec2-54-236-10-223.compute-1.amazonaws.com"
+  "ec2-100-24-16-184.compute-1.amazonaws.com"
+  "ec2-54-204-131-219.compute-1.amazonaws.com"
+  "ec2-52-90-218-187.compute-1.amazonaws.com"
+  "ec2-34-229-59-126.compute-1.amazonaws.com"],
+ :test-count 1,
+ :generator
+ (gen/timelimit 15 (gen/concat [(gen/on #{:nemesis} nil) (gen/on #object[clojure.core$complement$fn__5391 0x59371066 "clojure.core$complement$fn__5391@59371066"] (gen/delayfn #object[clojure.core$partial$fn__5561 0x3c544c9 "clojure.core$partial$fn__5561@3c544c9"] #object[jepsen.etcdemo$r 0x433d93e7 "jepsen.etcdemo$r@433d93e7"]))])),
+ :os
+ #object[jepsen.os.debian$reify__2496 0x43a59289 "jepsen.os.debian$reify__2496@43a59289"],
+ :time-limit 60,
+ :model {}}
+
+2018-11-29 01:03:22,839{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.os.debian: ec2-34-229-59-126.compute-1.amazonaws.com setting up debian
+2018-11-29 01:03:22,839{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.os.debian: ec2-52-90-218-187.compute-1.amazonaws.com setting up debian
+2018-11-29 01:03:22,839{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.os.debian: ec2-54-236-10-223.compute-1.amazonaws.com setting up debian
+2018-11-29 01:03:22,839{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.os.debian: ec2-100-24-16-184.compute-1.amazonaws.com setting up debian
+2018-11-29 01:03:22,839{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.os.debian: ec2-54-204-131-219.compute-1.amazonaws.com setting up debian
+2018-11-29 01:03:23,604{GMT}	WARN	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.control: Encountered error with conn [:control "ec2-100-24-16-184.compute-1.amazonaws.com"]; reopening
+2018-11-29 01:03:25,658{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2018-11-29 01:03:25,659{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-29 01:03:25,659{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-29 01:03:25,660{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.control.util: Stopping etcd
+2018-11-29 01:03:25,660{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-29 01:03:25,660{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.control.util: Stopping etcd
+2018-11-29 01:03:25,660{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-29 01:03:25,660{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-29 01:03:25,661{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.control.util: Stopping etcd
+2018-11-29 01:03:25,661{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.control.util: Stopping etcd
+2018-11-29 01:03:25,662{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.control.util: Stopping etcd
+2018-11-29 01:03:25,970{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2018-11-29 01:03:25,971{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.etcdemo: Setting up etcd v3.1.5
+2018-11-29 01:03:25,971{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.etcdemo: Setting up etcd v3.1.5
+2018-11-29 01:03:25,971{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.etcdemo: Setting up etcd v3.1.5
+2018-11-29 01:03:25,972{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.etcdemo: Setting up etcd v3.1.5
+2018-11-29 01:03:25,972{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.etcdemo: Setting up etcd v3.1.5
+2018-11-29 01:03:27,298{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.control.util: starting etcd
+2018-11-29 01:03:27,298{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.control.util: starting etcd
+2018-11-29 01:03:27,298{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.control.util: starting etcd
+2018-11-29 01:03:27,299{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.control.util: starting etcd
+2018-11-29 01:03:27,300{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.control.util: starting etcd
+2018-11-29 01:03:37,512{GMT}	INFO	[jepsen nemesis] jepsen.core: Starting nemesis
+2018-11-29 01:03:37,512{GMT}	INFO	[jepsen worker 0] jepsen.core: Starting worker 0
+2018-11-29 01:03:37,512{GMT}	INFO	[jepsen worker 1] jepsen.core: Starting worker 1
+2018-11-29 01:03:37,512{GMT}	INFO	[jepsen worker 2] jepsen.core: Starting worker 2
+2018-11-29 01:03:37,513{GMT}	INFO	[jepsen nemesis] jepsen.core: Running nemesis
+2018-11-29 01:03:37,514{GMT}	INFO	[jepsen worker 4] jepsen.core: Starting worker 4
+2018-11-29 01:03:37,514{GMT}	INFO	[jepsen worker 0] jepsen.core: Running worker 0
+2018-11-29 01:03:37,514{GMT}	INFO	[jepsen worker 1] jepsen.core: Running worker 1
+2018-11-29 01:03:37,514{GMT}	INFO	[jepsen worker 2] jepsen.core: Running worker 2
+2018-11-29 01:03:37,514{GMT}	INFO	[jepsen worker 3] jepsen.core: Starting worker 3
+2018-11-29 01:03:37,515{GMT}	INFO	[jepsen worker 4] jepsen.core: Running worker 4
+2018-11-29 01:03:37,517{GMT}	INFO	[jepsen worker 3] jepsen.core: Running worker 3
+2018-11-29 01:03:37,526{GMT}	INFO	[jepsen nemesis] jepsen.core: Stopping nemesis
+2018-11-29 01:03:37,631{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:read	nil
+2018-11-29 01:03:37,643{GMT}	WARN	[jepsen worker 4] jepsen.core: Error running worker 4
+java.lang.AssertionError: Assert failed: Expected client/invoke! to return a map with :type :ok, :fail, or :info, but received {:time 124107283} instead
+(or (= t :ok) (= t :fail) (= t :info))
+	at jepsen.core$invoke_op_BANG_.invokeStatic(core.clj:291) ~[jepsen-0.1.10.jar:na]
+	at jepsen.core$invoke_op_BANG_.invoke(core.clj:267) ~[jepsen-0.1.10.jar:na]
+	at jepsen.core.ClientWorker.run_worker_BANG_(core.clj:403) ~[jepsen-0.1.10.jar:na]
+	at jepsen.core$do_worker_BANG_.invokeStatic(core.clj:187) [jepsen-0.1.10.jar:na]
+	at jepsen.core$do_worker_BANG_.invoke(core.clj:171) [jepsen-0.1.10.jar:na]
+	at jepsen.core$run_workers_BANG_$fn__4598$fn__4599.invoke(core.clj:240) [jepsen-0.1.10.jar:na]
+	at clojure.lang.AFn.applyToHelper(AFn.java:152) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.applyTo(AFn.java:144) [clojure-1.9.0.jar:na]
+	at clojure.core$apply.invokeStatic(core.clj:657) [clojure-1.9.0.jar:na]
+	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1965) [clojure-1.9.0.jar:na]
+	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1965) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:425) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.applyToHelper(AFn.java:156) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.applyTo(RestFn.java:132) [clojure-1.9.0.jar:na]
+	at clojure.core$apply.invokeStatic(core.clj:661) [clojure-1.9.0.jar:na]
+	at clojure.core$bound_fn_STAR_$fn__5471.doInvoke(core.clj:1995) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:397) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.run(AFn.java:22) [clojure-1.9.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_171]
+2018-11-29 01:03:37,645{GMT}	INFO	[jepsen worker 4] jepsen.core: Stopping worker 4
+2018-11-29 01:03:37,652{GMT}	WARN	[jepsen worker 0] jepsen.core: Error running worker 0
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) [na:1.8.0_171]
+	at jepsen.generator.DelayFn.op(generator.clj:169) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator.On.op(generator.clj:542) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator.Concat.op(generator.clj:606) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator.TimeLimit.op(generator.clj:492) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator$op_and_validate.invokeStatic(generator.clj:34) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator$op_and_validate.invoke(generator.clj:30) ~[jepsen-0.1.10.jar:na]
+	at jepsen.core.ClientWorker.run_worker_BANG_(core.clj:373) ~[jepsen-0.1.10.jar:na]
+	at jepsen.core$do_worker_BANG_.invokeStatic(core.clj:187) [jepsen-0.1.10.jar:na]
+	at jepsen.core$do_worker_BANG_.invoke(core.clj:171) [jepsen-0.1.10.jar:na]
+	at jepsen.core$run_workers_BANG_$fn__4598$fn__4599.invoke(core.clj:240) [jepsen-0.1.10.jar:na]
+	at clojure.lang.AFn.applyToHelper(AFn.java:152) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.applyTo(AFn.java:144) [clojure-1.9.0.jar:na]
+	at clojure.core$apply.invokeStatic(core.clj:657) [clojure-1.9.0.jar:na]
+	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1965) [clojure-1.9.0.jar:na]
+	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1965) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:425) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.applyToHelper(AFn.java:156) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.applyTo(RestFn.java:132) [clojure-1.9.0.jar:na]
+	at clojure.core$apply.invokeStatic(core.clj:661) [clojure-1.9.0.jar:na]
+	at clojure.core$bound_fn_STAR_$fn__5471.doInvoke(core.clj:1995) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:397) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.run(AFn.java:22) [clojure-1.9.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_171]
+2018-11-29 01:03:37,653{GMT}	WARN	[jepsen worker 1] jepsen.core: Error running worker 1
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) [na:1.8.0_171]
+	at jepsen.generator.DelayFn.op(generator.clj:169) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator.On.op(generator.clj:542) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator.Concat.op(generator.clj:606) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator.TimeLimit.op(generator.clj:492) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator$op_and_validate.invokeStatic(generator.clj:34) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator$op_and_validate.invoke(generator.clj:30) ~[jepsen-0.1.10.jar:na]
+	at jepsen.core.ClientWorker.run_worker_BANG_(core.clj:373) ~[jepsen-0.1.10.jar:na]
+	at jepsen.core$do_worker_BANG_.invokeStatic(core.clj:187) [jepsen-0.1.10.jar:na]
+	at jepsen.core$do_worker_BANG_.invoke(core.clj:171) [jepsen-0.1.10.jar:na]
+	at jepsen.core$run_workers_BANG_$fn__4598$fn__4599.invoke(core.clj:240) [jepsen-0.1.10.jar:na]
+	at clojure.lang.AFn.applyToHelper(AFn.java:152) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.applyTo(AFn.java:144) [clojure-1.9.0.jar:na]
+	at clojure.core$apply.invokeStatic(core.clj:657) [clojure-1.9.0.jar:na]
+	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1965) [clojure-1.9.0.jar:na]
+	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1965) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:425) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.applyToHelper(AFn.java:156) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.applyTo(RestFn.java:132) [clojure-1.9.0.jar:na]
+	at clojure.core$apply.invokeStatic(core.clj:661) [clojure-1.9.0.jar:na]
+	at clojure.core$bound_fn_STAR_$fn__5471.doInvoke(core.clj:1995) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:397) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.run(AFn.java:22) [clojure-1.9.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_171]
+2018-11-29 01:03:37,653{GMT}	WARN	[jepsen worker 3] jepsen.core: Error running worker 3
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) [na:1.8.0_171]
+	at jepsen.generator.DelayFn.op(generator.clj:169) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator.On.op(generator.clj:542) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator.Concat.op(generator.clj:606) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator.TimeLimit.op(generator.clj:492) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator$op_and_validate.invokeStatic(generator.clj:34) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator$op_and_validate.invoke(generator.clj:30) ~[jepsen-0.1.10.jar:na]
+	at jepsen.core.ClientWorker.run_worker_BANG_(core.clj:373) ~[jepsen-0.1.10.jar:na]
+	at jepsen.core$do_worker_BANG_.invokeStatic(core.clj:187) [jepsen-0.1.10.jar:na]
+	at jepsen.core$do_worker_BANG_.invoke(core.clj:171) [jepsen-0.1.10.jar:na]
+	at jepsen.core$run_workers_BANG_$fn__4598$fn__4599.invoke(core.clj:240) [jepsen-0.1.10.jar:na]
+	at clojure.lang.AFn.applyToHelper(AFn.java:152) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.applyTo(AFn.java:144) [clojure-1.9.0.jar:na]
+	at clojure.core$apply.invokeStatic(core.clj:657) [clojure-1.9.0.jar:na]
+	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1965) [clojure-1.9.0.jar:na]
+	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1965) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:425) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.applyToHelper(AFn.java:156) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.applyTo(RestFn.java:132) [clojure-1.9.0.jar:na]
+	at clojure.core$apply.invokeStatic(core.clj:661) [clojure-1.9.0.jar:na]
+	at clojure.core$bound_fn_STAR_$fn__5471.doInvoke(core.clj:1995) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:397) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.run(AFn.java:22) [clojure-1.9.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_171]
+2018-11-29 01:03:37,653{GMT}	WARN	[jepsen worker 2] jepsen.core: Error running worker 2
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) [na:1.8.0_171]
+	at jepsen.generator.DelayFn.op(generator.clj:169) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator.On.op(generator.clj:542) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator.Concat.op(generator.clj:606) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator.TimeLimit.op(generator.clj:492) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator$op_and_validate.invokeStatic(generator.clj:34) ~[jepsen-0.1.10.jar:na]
+	at jepsen.generator$op_and_validate.invoke(generator.clj:30) ~[jepsen-0.1.10.jar:na]
+	at jepsen.core.ClientWorker.run_worker_BANG_(core.clj:373) ~[jepsen-0.1.10.jar:na]
+	at jepsen.core$do_worker_BANG_.invokeStatic(core.clj:187) [jepsen-0.1.10.jar:na]
+	at jepsen.core$do_worker_BANG_.invoke(core.clj:171) [jepsen-0.1.10.jar:na]
+	at jepsen.core$run_workers_BANG_$fn__4598$fn__4599.invoke(core.clj:240) [jepsen-0.1.10.jar:na]
+	at clojure.lang.AFn.applyToHelper(AFn.java:152) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.applyTo(AFn.java:144) [clojure-1.9.0.jar:na]
+	at clojure.core$apply.invokeStatic(core.clj:657) [clojure-1.9.0.jar:na]
+	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1965) [clojure-1.9.0.jar:na]
+	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1965) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:425) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.applyToHelper(AFn.java:156) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.applyTo(RestFn.java:132) [clojure-1.9.0.jar:na]
+	at clojure.core$apply.invokeStatic(core.clj:661) [clojure-1.9.0.jar:na]
+	at clojure.core$bound_fn_STAR_$fn__5471.doInvoke(core.clj:1995) [clojure-1.9.0.jar:na]
+	at clojure.lang.RestFn.invoke(RestFn.java:397) [clojure-1.9.0.jar:na]
+	at clojure.lang.AFn.run(AFn.java:22) [clojure-1.9.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_171]
+2018-11-29 01:03:37,658{GMT}	INFO	[jepsen worker 0] jepsen.core: Stopping worker 0
+2018-11-29 01:03:37,661{GMT}	INFO	[jepsen worker 3] jepsen.core: Stopping worker 3
+2018-11-29 01:03:37,661{GMT}	INFO	[jepsen worker 2] jepsen.core: Stopping worker 2
+2018-11-29 01:03:37,661{GMT}	INFO	[jepsen worker 1] jepsen.core: Stopping worker 1
+2018-11-29 01:03:37,682{GMT}	INFO	[jepsen test runner] jepsen.core: Snarfing log files
+2018-11-29 01:03:37,685{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.core: downloading /opt/etcd/etcd.log to etcd.log
+2018-11-29 01:03:37,685{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.core: downloading /opt/etcd/etcd.log to etcd.log
+2018-11-29 01:03:37,686{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.core: downloading /opt/etcd/etcd.log to etcd.log
+2018-11-29 01:03:37,686{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.core: downloading /opt/etcd/etcd.log to etcd.log
+2018-11-29 01:03:37,687{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.core: downloading /opt/etcd/etcd.log to etcd.log
+2018-11-29 01:03:37,763{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-29 01:03:37,763{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-29 01:03:37,763{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-29 01:03:37,763{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-29 01:03:37,764{GMT}	INFO	[jepsen node ec2-100-24-16-184.compute-1.amazonaws.com] jepsen.control.util: Stopping etcd
+2018-11-29 01:03:37,764{GMT}	INFO	[jepsen node ec2-54-204-131-219.compute-1.amazonaws.com] jepsen.control.util: Stopping etcd
+2018-11-29 01:03:37,764{GMT}	INFO	[jepsen node ec2-34-229-59-126.compute-1.amazonaws.com] jepsen.control.util: Stopping etcd
+2018-11-29 01:03:37,764{GMT}	INFO	[jepsen node ec2-52-90-218-187.compute-1.amazonaws.com] jepsen.control.util: Stopping etcd
+2018-11-29 01:03:37,765{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.etcdemo: Tearing down etcd v3.1.5
+2018-11-29 01:03:37,765{GMT}	INFO	[jepsen node ec2-54-236-10-223.compute-1.amazonaws.com] jepsen.control.util: Stopping etcd

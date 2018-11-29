@@ -1,0 +1,10 @@
+2018-11-28 23:00:40 Jepsen starting etcd :--log-output :stderr :--name ec2-54-204-131-219.compute-1.amazonaws.com :--listen-peer-urls http://ec2-54-204-131-219.compute-1.amazonaws.com:2380 :--listen-client-urls http://ec2-54-204-131-219.compute-1.amazonaws.com:2379 :--advertise-client-urls http://ec2-54-204-131-219.compute-1.amazonaws.com:2379 :--initial-cluster-state :new :--initial-advertise-peer-urls http://ec2-54-204-131-219.compute-1.amazonaws.com:2380 :--initial-cluster ec2-54-236-10-223.compute-1.amazonaws.com=http://ec2-54-236-10-223.compute-1.amazonaws.com:2380,ec2-100-24-16-184.compute-1.amazonaws.com=http://ec2-100-24-16-184.compute-1.amazonaws.com:2380,ec2-54-204-131-219.compute-1.amazonaws.com=http://ec2-54-204-131-219.compute-1.amazonaws.com:2380,ec2-52-90-218-187.compute-1.amazonaws.com=http://ec2-52-90-218-187.compute-1.amazonaws.com:2380,ec2-34-229-59-126.compute-1.amazonaws.com=http://ec2-34-229-59-126.compute-1.amazonaws.com:2380 
+2018-11-28 23:00:40.843807 I | etcdmain: etcd Version: 3.1.5
+2018-11-28 23:00:40.843852 I | etcdmain: Git SHA: 20490ca
+2018-11-28 23:00:40.843857 I | etcdmain: Go Version: go1.7.5
+2018-11-28 23:00:40.843894 I | etcdmain: Go OS/Arch: linux/amd64
+2018-11-28 23:00:40.843900 I | etcdmain: setting maximum number of CPUs to 2, total number of available CPUs is 2
+2018-11-28 23:00:40.843914 W | etcdmain: no data-dir provided, using default data-dir ./ec2-54-204-131-219.compute-1.amazonaws.com.etcd
+2018-11-28 23:00:40.843932 W | embed: expected IP in URL for binding (http://ec2-54-204-131-219.compute-1.amazonaws.com:2380)
+2018-11-28 23:00:40.843939 W | embed: expected IP in URL for binding (http://ec2-54-204-131-219.compute-1.amazonaws.com:2379)
+2018-11-28 23:00:40.846281 C | etcdmain: listen tcp 172.31.29.222:2380: bind: address already in use

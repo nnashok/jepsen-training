@@ -1,0 +1,94 @@
+2018-11-28 23:03:43 Jepsen starting etcd :--log-output :stderr :--name ec2-100-24-16-184.compute-1.amazonaws.com :--listen-peer-urls http://ec2-100-24-16-184.compute-1.amazonaws.com:2380 :--listen-client-urls http://ec2-100-24-16-184.compute-1.amazonaws.com:2379 :--advertise-client-urls http://ec2-100-24-16-184.compute-1.amazonaws.com:2379 :--initial-cluster-state :new :--initial-advertise-peer-urls http://ec2-100-24-16-184.compute-1.amazonaws.com:2380 :--initial-cluster ec2-54-236-10-223.compute-1.amazonaws.com=http://ec2-54-236-10-223.compute-1.amazonaws.com:2380,ec2-100-24-16-184.compute-1.amazonaws.com=http://ec2-100-24-16-184.compute-1.amazonaws.com:2380,ec2-54-204-131-219.compute-1.amazonaws.com=http://ec2-54-204-131-219.compute-1.amazonaws.com:2380,ec2-52-90-218-187.compute-1.amazonaws.com=http://ec2-52-90-218-187.compute-1.amazonaws.com:2380,ec2-34-229-59-126.compute-1.amazonaws.com=http://ec2-34-229-59-126.compute-1.amazonaws.com:2380
+2018-11-28 23:03:44.105871 I | etcdmain: etcd Version: 3.1.5
+2018-11-28 23:03:44.105976 I | etcdmain: Git SHA: 20490ca
+2018-11-28 23:03:44.105986 I | etcdmain: Go Version: go1.7.5
+2018-11-28 23:03:44.105991 I | etcdmain: Go OS/Arch: linux/amd64
+2018-11-28 23:03:44.105996 I | etcdmain: setting maximum number of CPUs to 2, total number of available CPUs is 2
+2018-11-28 23:03:44.106005 W | etcdmain: no data-dir provided, using default data-dir ./ec2-100-24-16-184.compute-1.amazonaws.com.etcd
+2018-11-28 23:03:44.106020 W | embed: expected IP in URL for binding (http://ec2-100-24-16-184.compute-1.amazonaws.com:2380)
+2018-11-28 23:03:44.106027 W | embed: expected IP in URL for binding (http://ec2-100-24-16-184.compute-1.amazonaws.com:2379)
+2018-11-28 23:03:44.108282 I | embed: listening for peers on http://ec2-100-24-16-184.compute-1.amazonaws.com:2380
+2018-11-28 23:03:44.108815 I | embed: listening for client requests on ec2-100-24-16-184.compute-1.amazonaws.com:2379
+2018-11-28 23:03:44.113138 I | pkg/netutil: resolving ec2-100-24-16-184.compute-1.amazonaws.com:2380 to 172.31.28.102:2380
+2018-11-28 23:03:44.113685 I | pkg/netutil: resolving ec2-100-24-16-184.compute-1.amazonaws.com:2380 to 172.31.28.102:2380
+2018-11-28 23:03:48.114676 I | etcdserver: name = ec2-100-24-16-184.compute-1.amazonaws.com
+2018-11-28 23:03:48.114706 I | etcdserver: data dir = ec2-100-24-16-184.compute-1.amazonaws.com.etcd
+2018-11-28 23:03:48.114714 I | etcdserver: member dir = ec2-100-24-16-184.compute-1.amazonaws.com.etcd/member
+2018-11-28 23:03:48.114726 I | etcdserver: heartbeat = 100ms
+2018-11-28 23:03:48.114731 I | etcdserver: election = 1000ms
+2018-11-28 23:03:48.114736 I | etcdserver: snapshot count = 10000
+2018-11-28 23:03:48.114749 I | etcdserver: advertise client URLs = http://ec2-100-24-16-184.compute-1.amazonaws.com:2379
+2018-11-28 23:03:48.114770 I | etcdserver: initial advertise peer URLs = http://ec2-100-24-16-184.compute-1.amazonaws.com:2380
+2018-11-28 23:03:48.114799 I | etcdserver: initial cluster = ec2-100-24-16-184.compute-1.amazonaws.com=http://ec2-100-24-16-184.compute-1.amazonaws.com:2380,ec2-34-229-59-126.compute-1.amazonaws.com=http://ec2-34-229-59-126.compute-1.amazonaws.com:2380,ec2-52-90-218-187.compute-1.amazonaws.com=http://ec2-52-90-218-187.compute-1.amazonaws.com:2380,ec2-54-204-131-219.compute-1.amazonaws.com=http://ec2-54-204-131-219.compute-1.amazonaws.com:2380,ec2-54-236-10-223.compute-1.amazonaws.com=http://ec2-54-236-10-223.compute-1.amazonaws.com:2380
+2018-11-28 23:03:48.118623 I | etcdserver: starting member e119ce2abc051435 in cluster 38957ac2ed0cbd2c
+2018-11-28 23:03:48.118652 I | raft: e119ce2abc051435 became follower at term 0
+2018-11-28 23:03:48.118664 I | raft: newRaft e119ce2abc051435 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+2018-11-28 23:03:48.118671 I | raft: e119ce2abc051435 became follower at term 1
+2018-11-28 23:03:48.129502 I | rafthttp: starting peer 10bf218ab4a912ed...
+2018-11-28 23:03:48.129544 I | rafthttp: started HTTP pipelining with peer 10bf218ab4a912ed
+2018-11-28 23:03:48.130894 I | rafthttp: started streaming with peer 10bf218ab4a912ed (writer)
+2018-11-28 23:03:48.131108 I | rafthttp: started streaming with peer 10bf218ab4a912ed (writer)
+2018-11-28 23:03:48.134291 I | rafthttp: started peer 10bf218ab4a912ed
+2018-11-28 23:03:48.134323 I | rafthttp: added peer 10bf218ab4a912ed
+2018-11-28 23:03:48.134345 I | rafthttp: starting peer 8893f9e0ef4f611f...
+2018-11-28 23:03:48.134367 I | rafthttp: started HTTP pipelining with peer 8893f9e0ef4f611f
+2018-11-28 23:03:48.134766 I | rafthttp: started streaming with peer 10bf218ab4a912ed (stream MsgApp v2 reader)
+2018-11-28 23:03:48.135779 I | rafthttp: started streaming with peer 8893f9e0ef4f611f (writer)
+2018-11-28 23:03:48.136128 I | rafthttp: started streaming with peer 10bf218ab4a912ed (stream Message reader)
+2018-11-28 23:03:48.137097 I | rafthttp: started peer 8893f9e0ef4f611f
+2018-11-28 23:03:48.137123 I | rafthttp: added peer 8893f9e0ef4f611f
+2018-11-28 23:03:48.137140 I | rafthttp: starting peer e7c1c60b864ae98b...
+2018-11-28 23:03:48.137183 I | rafthttp: started HTTP pipelining with peer e7c1c60b864ae98b
+2018-11-28 23:03:48.137457 I | rafthttp: started streaming with peer 8893f9e0ef4f611f (stream MsgApp v2 reader)
+2018-11-28 23:03:48.138912 I | rafthttp: started streaming with peer e7c1c60b864ae98b (writer)
+2018-11-28 23:03:48.139590 I | rafthttp: started streaming with peer 8893f9e0ef4f611f (writer)
+2018-11-28 23:03:48.139609 I | rafthttp: started streaming with peer e7c1c60b864ae98b (writer)
+2018-11-28 23:03:48.140460 I | rafthttp: started peer e7c1c60b864ae98b
+2018-11-28 23:03:48.140486 I | rafthttp: added peer e7c1c60b864ae98b
+2018-11-28 23:03:48.140503 I | rafthttp: starting peer f6f0c3a0ba455ab3...
+2018-11-28 23:03:48.140525 I | rafthttp: started HTTP pipelining with peer f6f0c3a0ba455ab3
+2018-11-28 23:03:48.143035 I | rafthttp: started peer f6f0c3a0ba455ab3
+2018-11-28 23:03:48.143056 I | rafthttp: added peer f6f0c3a0ba455ab3
+2018-11-28 23:03:48.143072 I | etcdserver: starting server... [version: 3.1.5, cluster version: to_be_decided]
+2018-11-28 23:03:48.143340 I | rafthttp: started streaming with peer e7c1c60b864ae98b (stream MsgApp v2 reader)
+2018-11-28 23:03:48.143513 I | rafthttp: started streaming with peer e7c1c60b864ae98b (stream Message reader)
+2018-11-28 23:03:48.143674 I | rafthttp: started streaming with peer f6f0c3a0ba455ab3 (writer)
+2018-11-28 23:03:48.143766 I | rafthttp: started streaming with peer f6f0c3a0ba455ab3 (writer)
+2018-11-28 23:03:48.143798 I | rafthttp: started streaming with peer f6f0c3a0ba455ab3 (stream MsgApp v2 reader)
+2018-11-28 23:03:48.143963 I | rafthttp: started streaming with peer f6f0c3a0ba455ab3 (stream Message reader)
+2018-11-28 23:03:48.144772 I | rafthttp: started streaming with peer 8893f9e0ef4f611f (stream Message reader)
+2018-11-28 23:03:48.145793 I | etcdserver/membership: added member 10bf218ab4a912ed [http://ec2-54-204-131-219.compute-1.amazonaws.com:2380] to cluster 38957ac2ed0cbd2c
+2018-11-28 23:03:48.145901 I | etcdserver/membership: added member 8893f9e0ef4f611f [http://ec2-34-229-59-126.compute-1.amazonaws.com:2380] to cluster 38957ac2ed0cbd2c
+2018-11-28 23:03:48.146001 I | etcdserver/membership: added member e119ce2abc051435 [http://ec2-100-24-16-184.compute-1.amazonaws.com:2380] to cluster 38957ac2ed0cbd2c
+2018-11-28 23:03:48.146114 I | etcdserver/membership: added member e7c1c60b864ae98b [http://ec2-52-90-218-187.compute-1.amazonaws.com:2380] to cluster 38957ac2ed0cbd2c
+2018-11-28 23:03:48.146231 I | etcdserver/membership: added member f6f0c3a0ba455ab3 [http://ec2-54-236-10-223.compute-1.amazonaws.com:2380] to cluster 38957ac2ed0cbd2c
+2018-11-28 23:03:48.146945 I | rafthttp: peer 8893f9e0ef4f611f became active
+2018-11-28 23:03:48.146962 I | rafthttp: established a TCP streaming connection with peer 8893f9e0ef4f611f (stream MsgApp v2 reader)
+2018-11-28 23:03:48.149123 I | rafthttp: peer f6f0c3a0ba455ab3 became active
+2018-11-28 23:03:48.149141 I | rafthttp: established a TCP streaming connection with peer f6f0c3a0ba455ab3 (stream MsgApp v2 reader)
+2018-11-28 23:03:48.150114 I | rafthttp: established a TCP streaming connection with peer 8893f9e0ef4f611f (stream Message reader)
+2018-11-28 23:03:48.150419 I | rafthttp: established a TCP streaming connection with peer f6f0c3a0ba455ab3 (stream Message reader)
+2018-11-28 23:03:48.155505 I | rafthttp: established a TCP streaming connection with peer 8893f9e0ef4f611f (stream Message writer)
+2018-11-28 23:03:48.155660 I | rafthttp: established a TCP streaming connection with peer f6f0c3a0ba455ab3 (stream Message writer)
+2018-11-28 23:03:48.155828 I | rafthttp: established a TCP streaming connection with peer f6f0c3a0ba455ab3 (stream MsgApp v2 writer)
+2018-11-28 23:03:48.155857 I | rafthttp: established a TCP streaming connection with peer 8893f9e0ef4f611f (stream MsgApp v2 writer)
+2018-11-28 23:03:48.162534 I | rafthttp: peer e7c1c60b864ae98b became active
+2018-11-28 23:03:48.162550 I | rafthttp: established a TCP streaming connection with peer e7c1c60b864ae98b (stream Message reader)
+2018-11-28 23:03:48.162736 I | rafthttp: established a TCP streaming connection with peer e7c1c60b864ae98b (stream MsgApp v2 reader)
+2018-11-28 23:03:48.165119 I | rafthttp: established a TCP streaming connection with peer e7c1c60b864ae98b (stream MsgApp v2 writer)
+2018-11-28 23:03:48.165177 I | rafthttp: established a TCP streaming connection with peer e7c1c60b864ae98b (stream Message writer)
+2018-11-28 23:03:48.221067 I | raft: e119ce2abc051435 [term: 1] received a MsgVote message with higher term from 8893f9e0ef4f611f [term: 2]
+2018-11-28 23:03:48.221104 I | raft: e119ce2abc051435 became follower at term 2
+2018-11-28 23:03:48.221117 I | raft: e119ce2abc051435 [logterm: 1, index: 5, vote: 0] cast MsgVote for 8893f9e0ef4f611f [logterm: 1, index: 5] at term 2
+2018-11-28 23:03:48.222903 I | raft: raft.node: e119ce2abc051435 elected leader 8893f9e0ef4f611f at term 2
+2018-11-28 23:03:48.227793 I | etcdserver: published {Name:ec2-100-24-16-184.compute-1.amazonaws.com ClientURLs:[http://ec2-100-24-16-184.compute-1.amazonaws.com:2379]} to cluster 38957ac2ed0cbd2c
+2018-11-28 23:03:48.227815 I | embed: ready to serve client requests
+2018-11-28 23:03:48.227843 E | etcdmain: forgot to set Type=notify in systemd service file?
+2018-11-28 23:03:48.228082 N | embed: serving insecure client requests on 172.31.28.102:2379, this is strongly discouraged!
+2018-11-28 23:03:48.243571 I | rafthttp: peer 10bf218ab4a912ed became active
+2018-11-28 23:03:48.243589 I | rafthttp: established a TCP streaming connection with peer 10bf218ab4a912ed (stream Message writer)
+2018-11-28 23:03:48.247362 I | rafthttp: established a TCP streaming connection with peer 10bf218ab4a912ed (stream Message reader)
+2018-11-28 23:03:48.247395 I | rafthttp: established a TCP streaming connection with peer 10bf218ab4a912ed (stream MsgApp v2 reader)
+2018-11-28 23:03:48.252223 I | rafthttp: established a TCP streaming connection with peer 10bf218ab4a912ed (stream MsgApp v2 writer)
+2018-11-28 23:03:48.253357 N | etcdserver/membership: set the initial cluster version to 3.1
+2018-11-28 23:03:48.253395 I | etcdserver/api: enabled capabilities for version 3.1
