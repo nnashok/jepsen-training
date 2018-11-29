@@ -2,14 +2,19 @@
   (:require [clojure.tools.logging :refer [info warn]]
             [clojure.string :as str]
             [verschlimmbesserung.core :as v]
-            [jepsen [cli :as cli]
+            [jepsen [checker :as checker]
+                    [cli :as cli]
                     [client :as client]
                     [control :as c]
                     [db :as db]
-                    [tests :as tests]
-                    [generator :as gen]]
+                    [generator :as gen]
+                    [independent :as independent]
+                    [nemesis :as nemesis]
+                    [tests :as tests]]
+            [jepsen.checker.timeline :as timeline]
             [jepsen.control.util :as cu]
             [jepsen.os.debian :as debian]
+            [knossos.model :as model]
             [slingshot.slingshot :refer [try+]]))
 
 (def dir "/opt/etcd")
@@ -85,17 +90,25 @@
   (setup! [this test])
 
   (invoke! [_ test op]
-    (case (:f op)
-      :read (assoc op :type :ok, :value (parse-long (v/get conn "foo")))
-      :write (do (v/reset! conn "foo" (:value op))
-                 (assoc op :type, :ok))
-      :cas (try+
-             (let [[old new] (:value op)]
-              (assoc op :type (if (v/cas! conn "foo" old new)
-                                :ok
-                                :fail)))
-             (catch [:errorCode 100] ex
-               (assoc op :type :fail, :error :not-found)))))
+    (let [[k, v] (:value op)]
+      (try+
+        (case (:f op)
+          :read (let[value (-> conn
+                               (v/get k {:quorum? true})
+                               parse-long)]
+                  (assoc op :type :ok, :value (independent/tuple k value)))
+          :write (do (v/reset! conn k v)
+                     (assoc op :type, :ok))
+          :cas (let [[old new] v]
+                (assoc op :type (if (v/cas! conn k old new)
+                                    :ok
+                                    :fail))))
+        (catch java.net.SocketTimeoutException ex
+          (assoc op
+                 :type (if (= :read (:f op)) :fail :info)
+                 :error :timeout))
+        (catch [:errorCode 100] ex
+          (assoc op :type :fail, :error :not-found)))))
 
   (teardown! [this test])
 
@@ -115,10 +128,27 @@
           :os debian/os
           :db (db "v3.1.5")
           :client (Client. nil)
-          :generator (->> (gen/mix [r w cas])
-                          (gen/stagger 1)
-                          (gen/nemesis nil)
-                          (gen/time-limit 15))}))
+          :nemesis (nemesis/partition-random-halves)
+          :model (model/cas-register)
+          :checker (checker/compose
+                     {:perf   (checker/perf)
+                      :indep  (independent/checker
+                                (checker/compose
+                                  {:linear (checker/linearizable)
+                                   :timeline (timeline/html)}))})
+          :generator (->> (independent/concurrent-generator
+                            10
+                            (range)
+                            (fn [k]
+                              (->> (gen/mix [r w cas])
+                                   (gen/stagger 0.1)
+                                   (gen/limit 100))))
+                          (gen/nemesis
+                            (gen/seq (cycle [(gen/sleep 5)
+                                               {:type :info, :f :start, :value nil}
+                                               (gen/sleep 5)
+                                               {:type :info, :f :stop, :value nil}])))
+                          (gen/time-limit (:time-limit opts)))}))
 
 ; Dummy function to just pring args
 ;(defn -main
