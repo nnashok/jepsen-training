@@ -4,9 +4,10 @@ A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
 
+```
 lein run test --username admin --nodes-file ~/nodes
 lein run serve
-
+```
 ## License
 
 Copyright © 2018 FIXME
